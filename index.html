@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Tetris clone!">
+	<meta name="author" content="Tomasz Kaczmarek">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/form.css">
+
+	<script src="scripts/jquery.js"></script>
+	<script type ="text/javascript" src="scripts/script.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+
+	<title>TETRIS</title>
+</head>
+<body onload="myGameArea.start()" >
+	<div id="side_nav">
+		<img id="side_nav_cross" src="img/cross.svg">
+		<a>Ustawienia</a>
+		<a>Tryb</a>
+		<a class="nav_multi_opt">Multiplayer</a>
+		<a>O nas</a>
+	</div>
+	<div class="form" id="join_match">
+		<label for="user_name">Nick: </label>
+		<input type="text" id="user_name" maxlength="25" placeholder="Max 25 znaków."><br>
+		<label for="match_pswd">Hasło: </label>
+		<input type="password" class="pswd" id="join_pswd">
+		<a class="eye_svg"></a>
+		<div>
+			<button type="button" onclick="joinMatchBox()">OK</button>
+			<button type="button" onclick="joinMatchBox()">Anuluj</button>
+		</div>
+	</div>
+	<dvi class="overlay"></dvi>
+	<div id="win">
+	<div id="header"><img src="img/tetris_logo.svg"></div>
+	<div id="nav_bar">
+		<div>Ustawienia</div>
+		<div>Tryb</div>
+		<div class="nav_multi_opt">Multiplayer</div>
+		<div>O nas</div>
+		<img id="ham_menu" src="img/hamburger_menu.svg">
+	</div>
+	
+	<div id="main_win">
+		<div id="top"></div>
+		<div id="game_win">
+			<div id="mini_game_menu">
+				<p>GAME OVER</p>
+				<div class="game_win_btn" id="start" onclick="startGame()">START</div>
+				<div class="game_win_btn" id="restart">RESTART</div>
+				<div class="game_win_btn" id="exit">EXIT</div>
+			</div>
+		</div>
+		<div id="multi_main_win">
+			<div id="multi_nav_bar">
+				<div onclick="gameMenu()">Utwórz</div>
+				<div id="refresh_btn" onclick="refreshBtn()"><span id="refresh_txt">Odśwież</span><img id="refresh_img" src="img/refresh-icon.svg"></div>
+			</div>
+			<div id="rooms_list">
+				<table id="rooms_table">
+					<tr id="table_titles">
+						<td id="table_name">Nazwa</td>
+						<td id="table_pass">Hasło</td>
+						<td id="table_players">Liczba graczy</td>
+						<td id="table_mode">Tryb gry</td>
+						<td id="table_desc">Opis</td>
+					</tr>
+				</table>
+			</div>
+			<div id="create_game">
+				<div class="form" id="create_game_form">
+					<label for="match_name">Nazwa: </label>
+					<input type="text" id="match_name" maxlength="45" placeholder="Max 45 znaków."><br>
+					<div id="pswd">
+						<label for="match_pswd">Hasło: </label>
+						<input type="password" class="pswd" id="match_pswd" placeholder="Min 8 znaków.">
+						<a class="eye_svg"></a>
+					</div>
+					<label for="match_players">Liczba graczy: </label>
+					<select id="match_players">
+						<option value="2">2</option>
+						<option value="4">4</option>
+						<option value="6">6</option>
+						<option value="8">8</option>
+					</select><br>
+					<label for="match_game_mode">Tryb gry: </label>
+					<select id="match_game_mode">
+						<option value="0">sratatata</option>
+						<option value="1">blahblahblah</option>
+						<option value="2">o ironio tryb numer 3</option>
+						<option value="3">jwebrgwiyuai</option>
+					</select><br>
+					<div id="form_txtarea">
+						<label for="match_desc">Opis: </label>
+						<textarea id="match_desc" cols="35" rows="12" maxlength="255" placeholder="Max 255 znaków. Opis nie jest wymagany."></textarea>
+					</div>
+					<button type="button" id="match_form_btn">Utwórz</button>
+				</div>
+			</div>
+		</div>
+		<div id="bottom"></div>
+	</div>
+	<div id="info"></div>
+	<div id="footer"><p >Tomasz Kaczmarek 2021</p></div>
+	</div>
+		
+		<script type ="text/javascript" src="scripts/client.js"></script>
+		<script type ="text/javascript" src="scripts/UI_scripts.js"></script>
+	<script type="text/javascript">
+		/*
+		window.addEventListener('beforeunload', function (e) {
+			e.returnValue =  null;
+			socket.emit('Logout');
+			e.preventDefault();
+			
+		});*/
+	</script>
+</body>

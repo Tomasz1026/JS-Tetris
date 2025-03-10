@@ -1,0 +1,107 @@
+#create_game_form {
+	width: 350px;
+	text-align: left;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.form input, select, textarea {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding:5px;
+	border: 1px solid gray;
+	border-radius: 10px;
+	
+	transition: box-shadow 0.5s ease;
+}
+
+.form *:focus {
+	outline: none;
+	box-shadow: 0 .5rem 1rem -.25rem rgba(0,0,0,.3);
+}
+
+#create_game_form > select:hover {
+	cursor:pointer;
+}
+
+.eye_svg {
+	
+	width: 20px;
+	height: 20px;
+	content: url(../img/eye.svg);
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+}
+
+.eye_svg:hover {
+	cursor: pointer;
+}
+
+#form_txtarea *
+{
+	vertical-align: top;
+	resize: none;
+}
+
+#match_form_btn {
+	margin-left:320px;
+	margin-bottom:30px;
+}
+
+.b{
+    box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.form button {
+	border: none;
+	border-radius: 50px;
+	background: gray;
+	color: white;
+	font-size: 20px;
+  	text-decoration: none;
+	padding: 10px 32px;
+	transition: box-shadow 0.25s;
+	margin-left: 30px;
+}
+
+.form button:hover{
+	cursor:pointer;
+	box-shadow: 0 .5rem 1rem -.25rem rgba(0,0,0,.3);
+}
+
+#join_match {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    z-index: 999;
+    height: 200px;
+    width: 300px;
+    background: white;
+	border: 1px solid black;
+	border-radius: 20px;
+	display: none;
+}
+
+#join_match > div {
+	display: flex;
+	/*justify-content: center;*/
+	margin-top: 15px;
+}
+
+#join_match > input {
+	margin-top: 20px;
+}
+
+#join_match > label {
+	
+	margin-left: 20px;
+}

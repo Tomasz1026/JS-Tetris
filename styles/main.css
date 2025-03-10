@@ -1,0 +1,368 @@
+html, body {
+	margin: 0px;
+	height: 1500px;
+	width: 100%;
+	padding: 0px;
+	font-family: 'Varela Round', sans-serif;
+}
+
+#header, #footer {
+	height: 60px;
+	width: 100%;
+	background: white;
+	text-align: center;
+}
+
+#footer {
+	background: gray;
+	padding-top: 15px;
+}
+
+
+
+#multi_nav_bar {
+	height:50px;
+	background: gray;
+	list-style: none;
+	text-align: left;
+	width: 100%;
+	margin: 0;
+	padding:0;
+	display: flex;
+}
+
+#multi_nav_bar > div {
+	height: 25px;
+	width: 150px; 
+	text-align: center;
+	background:white;
+	padding-top: 5px;
+	margin-top: 10px;
+	margin-left: 20px;
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0;
+	left: 0px;
+	position: relative;
+}
+
+#multi_nav_bar > div:hover {
+	cursor: pointer;
+	background: #f2f2f2;
+}
+
+#refresh_txt {
+	position: relative;
+	
+}
+
+@keyframes opacity_in {
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes opacity_out {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes refresh_button_in {
+	from {
+		width: 150px;
+	}
+	to{
+		width: 30px;
+	}
+}
+
+@keyframes refresh_button_out {
+	from {
+		width: 30px;
+	}
+	to{
+		width: 150px;
+	}
+}
+
+#refresh_img {
+	width: 15px;
+	height: 15px;
+	margin: 0;
+	top: 50%;
+  	right: 50%;
+ 	transform: translate(50%, -50%);
+	opacity: 0;
+	position: absolute;
+	animation: refresh_spin 1s linear infinite;
+	transform-origin: 50% 56%;
+}
+
+@keyframes refresh_spin {
+	from {
+		transform: translate(51%, -50%) rotate(0deg);
+		
+	}
+	to {
+		transform: translate(50%, -51%) rotate(360deg);
+	}
+}
+
+#mini_game_menu > p {
+	display: none;
+}
+
+#create_game {
+	padding-top: 20px;
+	display: none;
+	text-align: center;
+}
+
+#rooms_list {
+	display: block;
+}
+
+#rooms_table {
+	border-collapse: collapse;
+	width: 100%;
+	
+}
+
+#rooms_table tr {
+	width: 100%;
+	height: 30px;
+	border-bottom: 1px solid black;
+}
+
+.database_row:hover {
+	background:white;
+	cursor: pointer;
+}
+
+#table_titles td:hover {
+	background: #f2f2f2;
+	color: black;
+	cursor: pointer;
+}
+
+#table_name {
+	width: 25%;	
+	border-right: 2px solid black;
+}
+
+#table_pass {
+	width: 10%;	
+	border-right: 2px solid black;
+}
+
+#table_players, #table_mode {
+	width: 15%;	
+	border-right: 2px solid black;
+}
+
+#table_desc {
+	width: 35%;	
+}
+
+#table_titles {
+	background: gray;
+	color: white;
+	border-top: 1px solid black;
+}
+
+#nav_bar {
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	height: 40px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	background: white;
+	z-index: 997;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+#nav_bar > div {
+	text-align: center;
+	height: 30px;
+	width: 150px;
+	margin-left: 2px;
+	padding-top: 10px;
+}
+
+
+
+#nav_bar > div:hover {
+	cursor:pointer;
+	background: #f2f2f2
+}
+
+#top, #bottom {
+	clear: both;
+	height: 50px;
+	width: 100%;
+}
+
+#info {
+	height: 600px;
+}
+
+#main_win {
+	text-align: center;
+	height: 740px;
+	width: 100%;
+	text-align: center;
+	padding: 0;
+	vertical-align: bottom;
+	overflow: hidden;
+}
+
+#game_win {
+	padding: 20px;
+	background: #808080;
+	width: 700px;
+	position: relative;
+	left: 0;
+}
+
+#game_win, canvas {
+	
+	margin-left: auto;
+	margin-right: auto; 
+	margin-bottom:auto;
+	margin-top:auto;
+}
+
+#multi_main_win {
+	position: relative;
+	background: #f2f2f2;
+	left: 2000px;
+	top: -640px;
+}
+
+#mini_game_menu {
+	background: black;
+	border: 3px solid white;
+	width: 400px;
+	height: 200px;
+	text-align: center;
+	color: white;
+	font-size: 40px;
+	position: absolute;
+    margin: auto;
+	top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	display: block;
+	z-index:0;
+}
+
+.game_win_btn {
+	background: black;
+	border: 3px solid white;
+	width: 48.5%;
+	height: auto;
+	color: white;
+	
+	position: relative;
+	
+	transition: background 0.5s;
+	cursor: pointer;
+}
+
+.game_win_btn:hover {
+	background: white;
+	color: black;
+}
+
+#start {
+	 margin-top: auto;
+	 margin-right: auto;
+	 margin-left: auto;
+	 margin-bottom: auto;
+}
+
+#restart, #exit {
+	float: left;
+	display: none;
+}
+
+#ham_menu {
+	display: none;
+}
+
+#ham_menu:hover {
+	cursor: pointer;
+}
+
+#side_nav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	background: #f2f2f2;
+	color: gray;
+	overflow-x: hidden;
+	transition: width 0.5s;
+}
+
+#side_nav > a {
+	text-decoration: none;
+	padding: 8px 8px 8px 50px;
+	font-size: 20px;
+	display: block;
+	width: 100%;
+	
+}
+
+#side_nav > img{
+	margin-top: 10px;
+	margin-left: 85%;
+	height: 25px;
+}
+
+#side_nav > img:hover {
+	cursor:pointer;
+}
+
+#side_nav > a:hover {
+	cursor: pointer;
+	background: white;
+	color: black;
+}
+
+.overlay {
+	position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:998;
+	background: #000000;
+	display: none;
+}
+
+@media screen and (max-width: 650px){
+	#nav_bar > div {
+		display: none;
+	}
+	#nav_bar {
+		justify-content: right;
+	}
+	#ham_menu{
+		display: block;
+	}
+}
+
+@media screen and (min-width: 1920px){
+	#multi_main_win{
+		width: 1920px;
+	}
+
+}
